@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de ventas — ChispudosMarket</title>
+<link rel="stylesheet" href="/panel/styles.css">
+<link rel="manifest" href="/panel/manifest.json">
+<meta name="theme-color" content="#5D5FEF">
+<link rel="icon" href="/panel/icon-192.png">
+<link rel="apple-touch-icon" href="/panel/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ChispudosMarket">
+</head>
+<body>
+
+<div class="app-shell" data-view="view-convos">
+
+  <aside class="rail">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.3-1.96 1.34-.5.04-.97.22-3.27-.68-2.76-1.09-4.5-3.9-4.64-4.08-.13-.18-1.1-1.47-1.1-2.8s.7-1.99.94-2.26c.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.18-.13.29-.26.45l-.39.45c-.13.13-.26.27-.11.53.14.26.64 1.06 1.38 1.72.95.85 1.75 1.11 2 1.24.25.14.4.11.54-.07.14-.18.62-.72.79-.97.16-.25.33-.21.55-.13.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.59-.18 1.27z"/></svg>
+    </span>
+
+    <nav class="rail-nav" role="tablist">
+      <button class="tab" role="tab" data-view="view-convos" data-label="Conversaciones"
+              aria-selected="true" aria-label="Conversaciones">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h3v3.2c0 .68.79 1.05 1.31.61L13.5 19H20a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+        <span class="rail-tip">Conversaciones</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-pipeline" data-label="Pipeline"
+              aria-selected="false" aria-label="Pipeline">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="12" rx="1.6"/><rect x="9.5" y="4" width="5" height="16" rx="1.6"/><rect x="16" y="4" width="5" height="8" rx="1.6"/></svg>
+        <span class="rail-tip">Pipeline</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-metrics" data-label="Métricas"
+              aria-selected="false" aria-label="Métricas">
+        <svg viewBox="0 0 24 24"><path d="M3 3v18h18v-2H5V3zm4 14h2V9H7zm4 0h2V5h-2zm4 0h2v-6h-2z"/></svg>
+        <span class="rail-tip">Métricas</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-products" data-label="Productos"
+              aria-selected="false" aria-label="Productos">
+        <svg viewBox="0 0 24 24"><path d="M12 2 3 6.2v11.6L12 22l9-4.2V6.2zm0 2.35 6.1 2.85L12 10.05 5.9 7.2zM5 8.95l6 2.8v7.5l-6-2.8zm8 10.3v-7.5l6-2.8v7.5z"/></svg>
+        <span class="rail-tip">Productos</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-library" data-label="Imágenes"
+              aria-selected="false" aria-label="Imágenes">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 13.4-4.6-5.3a.8.8 0 0 0-1.2 0L11 15.9l-2-2.3a.8.8 0 0 0-1.2 0L4 18V6h16zM8.6 10.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4z"/></svg>
+        <span class="rail-tip">Imágenes</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-broadcast" data-label="Envíos masivos"
+              aria-selected="false" aria-label="Envíos masivos">
+        <svg viewBox="0 0 24 24"><path d="M13.5 2 4 13.2c-.4.48-.06 1.2.57 1.2H10l-1.4 7.4c-.13.7.77 1.1 1.2.54L20 11.14c.4-.48.06-1.2-.57-1.2H14l1.4-7.4c.13-.7-.77-1.1-1.2-.54z"/></svg>
+        <span class="rail-tip">Envíos masivos</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-sim" data-label="Simulador"
+              aria-selected="false" aria-label="Simulador">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm0 4h7v2H7zM7 5h10v2H7z"/></svg>
+        <span class="rail-tip">Simulador</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-coupons" data-label="Cupones"
+              aria-selected="false" aria-label="Cupones">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3.18A3 3 0 1 0 12 5.06 3 3 0 1 0 7.18 8H4a1 1 0 0 0-1 1v3a3 3 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a3 3 0 0 0 0-6V9a1 1 0 0 0-1-1zM12 4a1 1 0 1 1-1 1 1 1 0 0 1 1-1zm-4 3a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm5 12h-2v-2h2zm0-4h-2v-2h2zm0-4h-2V9h2z"/></svg>
+        <span class="rail-tip">Cupones</span>
+      </button>
+
+      <button class="tab" role="tab" data-view="view-config" data-label="Configuración"
+              aria-selected="false" aria-label="Configuración">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.07 7.07 0 0 0 0-1.88l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.61.22L2.65 8.84a.5.5 0 0 0 .12.64l2.03 1.58a7.07 7.07 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.12.22.39.3.61.22l2.39-.96c.49.38 1.03.7 1.62.94l.36 2.54c.04.24.25.42.5.42h3.84c.25 0 .46-.18.5-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.49 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/></svg>
+        <span class="rail-tip">Configuración</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="app-body">
+
+    <header class="app-header">
+      <h1 class="view-title" id="viewTitle">Conversaciones</h1>
+      <span class="header-spacer"></span>
+      <span class="clock" id="clock"></span>
+      <span class="conn">
+        <span class="conn-dot is-connected"></span>
+        <span>Bot activo</span>
+      </span>
+      <span class="avatar avatar-me" id="meAvatar" title="ChispudosMarket">CM</span>
+      <button class="btn" id="logoutBtn" type="button" title="Cerrar sesión">Salir</button>
+    </header>
+
+    <main class="app-main">
+
+      <section class="view is-active" id="view-convos">
+        <div class="convo-layout" id="convoLayout">
+          <aside class="convo-sidebar">
+            <div class="convo-search">
+              <input type="search" id="convoSearch" placeholder="Buscar contacto o mensaje…">
+            </div>
+            <div class="convo-list" id="convoList"></div>
+          </aside>
+
+          <div class="chat">
+            <div class="chat-header" id="chatHeader" hidden>
+              <button class="btn back" id="chatBack" aria-label="Volver">←</button>
+              <span class="avatar avatar-sm" id="chatAvatar"></span>
+              <div class="chat-ident">
+                <div class="chat-title" id="chatTitle"></div>
+                <div class="chat-sub" id="chatSub"></div>
+              </div>
+              <span class="header-spacer"></span>
+              <div class="stage-picker">
+                <select id="chatStage" aria-label="Etapa del pipeline"></select>
+                <button class="btn stage-lock" id="chatStageAuto" hidden
+                        title="La etapa está fijada a mano y la IA no la toca. Tocá para devolverle el control.">
+                  📌 <span>Fijada</span>
+                </button>
+              </div>
+              <label class="switch" title="Cuando está apagado, el bot no responde en esta conversación">
+                <input type="checkbox" id="chatBotToggle">
+                <span>Bot activo</span>
+              </label>
+            </div>
+
+            <div class="followup-bar window-closed-bar" id="windowClosedBar" hidden>
+              <span class="followup-info">⏰ Pasaron más de 24h desde el último mensaje del cliente: WhatsApp ya no deja mandar texto libre. Mandale una plantilla aprobada:</span>
+              <div class="window-closed-actions">
+                <input type="text" list="wcTemplateList" id="wcTemplate" placeholder="Nombre de la plantilla">
+                <datalist id="wcTemplateList"></datalist>
+                <input type="text" id="wcParams" placeholder="Variables (coma)">
+                <button class="btn btn-primary" id="wcSend" type="button">Enviar plantilla</button>
+              </div>
+            </div>
+
+            <div class="followup-bar" id="followupBar" hidden>
+              <span class="followup-info" id="followupInfo"></span>
+              <button class="btn" id="followupBtn" type="button">Marcar guía enviada</button>
+            </div>
+
+            <div class="followup-bar" id="amountBar" hidden>
+              <span class="followup-info">Monto vendido</span>
+              <input type="number" id="amountInput" min="0" step="0.01" placeholder="0.00" style="width:110px">
+              <button class="btn" id="amountSaveBtn" type="button">Guardar</button>
+            </div>
+
+            <div class="followup-bar" id="guiaBar" hidden>
+              <span class="followup-info">Número de guía</span>
+              <input type="text" id="guiaInput" placeholder="Ej: 123456789" style="width:160px">
+              <span class="followup-info">Agencia</span>
+              <input type="text" id="guiaAgenciaInput" placeholder="Ej: Tealca Maracaibo" style="width:170px">
+              <label class="btn" id="guiaImageLabel" title="Adjuntar foto de la guía" style="cursor:pointer">
+                📎 Foto
+                <input type="file" id="guiaImageFile" accept="image/jpeg,image/png,image/webp" hidden>
+              </label>
+              <span class="followup-info" id="guiaImageName"></span>
+              <button class="btn" id="guiaSaveBtn" type="button">Guardar y avisar</button>
+              <span class="followup-info" id="guiaStatus"></span>
+            </div>
+
+            <div class="followup-bar note-bar" id="noteBar" hidden>
+              <span class="followup-info">Nota interna</span>
+              <input type="text" id="noteInput" placeholder="Ej: cliente frecuente, pide al mayor..." style="flex:1;min-width:160px">
+              <button class="btn" id="noteSaveBtn" type="button">Guardar</button>
+            </div>
+
+            <div class="memory-card" id="memoryCard" hidden></div>
+
+            <div class="chat-messages" id="chatMessages">
+              <div class="empty-state">
+                <div class="icon">💬</div>
+                <div class="title">Ninguna conversación abierta</div>
+                <div class="desc">Elegí una de la lista para ver el historial y responder a mano.</div>
+              </div>
+            </div>
+
+            <div class="chat-composer" id="chatComposer" hidden>
+              <label class="btn" id="chatImageLabel" title="Enviar imagen" style="cursor:pointer">
+                📎
+                <input type="file" id="chatImageFile" accept="image/jpeg,image/png,image/webp" hidden>
+              </label>
+              <input type="text" id="chatInput" placeholder="Escribir mensaje manual…">
+              <button class="btn btn-primary" id="chatSend">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-pipeline">
+        <div class="run-filters" id="pipelineFilters">
+          <button class="filter-chip is-on" type="button" data-window="">Todas</button>
+          <button class="filter-chip" type="button" data-window="hoy">Hoy</button>
+          <button class="filter-chip" type="button" data-window="24h">Últimas 24h</button>
+          <button class="filter-chip" type="button" data-window="3d">Últimos 3 días</button>
+          <button class="filter-chip" type="button" data-window="7d">Última semana</button>
+          <button class="filter-chip" type="button" data-window="stale">Sin novedad hace +7 días</button>
+        </div>
+        <div class="pipeline-range" id="pipelineRange">
+          <label for="pipelineFrom">Desde</label>
+          <input type="date" id="pipelineFrom">
+          <label for="pipelineTo">Hasta</label>
+          <input type="date" id="pipelineTo">
+          <button class="btn" id="pipelineApplyRange" type="button">Aplicar rango</button>
+          <button class="btn" id="pipelineClearRange" type="button" hidden>Quitar filtro</button>
+        </div>
+        <div class="board" id="board"></div>
+      </section>
+
+      <!-- Métricas -->
+      <section class="view" id="view-metrics">
+        <div class="autos-scroll">
+          <div class="autos-inner">
+
+            <div class="run-filters" id="metricsFilters">
+              <button class="filter-chip is-on" type="button" data-window="">Todo el historial</button>
+              <button class="filter-chip" type="button" data-window="hoy">Hoy</button>
+              <button class="filter-chip" type="button" data-window="ayer">Ayer</button>
+              <button class="filter-chip" type="button" data-window="7d">Últimos 7 días</button>
+              <button class="filter-chip" type="button" data-window="30d">Últimos 30 días</button>
+            </div>
+            <div class="pipeline-range" id="metricsRangeRow">
+              <label for="metricsFrom">Desde</label>
+              <input type="date" id="metricsFrom">
+              <label for="metricsTo">Hasta</label>
+              <input type="date" id="metricsTo">
+              <button class="btn" id="metricsApplyRange" type="button">Aplicar rango</button>
+              <button class="btn" id="metricsClearRange" type="button" hidden>Quitar filtro</button>
+            </div>
+
+            <div id="metricsRangeCard" hidden>
+              <h2 class="section-title" id="metricsRangeTitle">En el período seleccionado</h2>
+              <div class="metrics-cards" id="metricsRangeCards"></div>
+              <p class="help" id="metricsRangeNote"></p>
+              <h2 class="section-title">Productos más vendidos en el período</h2>
+              <div class="card" id="metricsRangeProducts"></div>
+              <h2 class="section-title">Por código de anuncio en el período</h2>
+              <div class="card" id="metricsRangeAdCodes"></div>
+            </div>
+
+            <h2 class="section-title">Historial completo</h2>
+            <div class="metrics-cards" id="metricsCards"></div>
+
+            <h2 class="section-title">Embudo de ventas</h2>
+            <div class="card metrics-funnel" id="metricsFunnel"></div>
+
+            <h2 class="section-title">Necesitan seguimiento</h2>
+            <div class="card" id="metricsStale"></div>
+
+            <h2 class="section-title">Ciudades con más pedidos</h2>
+            <div class="card" id="metricsLocations"></div>
+
+            <h2 class="section-title">Productos más vendidos</h2>
+            <div class="card" id="metricsProducts"></div>
+
+            <h2 class="section-title">Ventas por código de anuncio</h2>
+            <p class="help">
+              El código (I1C1, I2C3...) que pongas en el texto precargado del link de
+              cada anuncio, capturado del primer mensaje de cada conversación. Sirve
+              para ver qué anuncio conviene escalar y cuál no.
+            </p>
+            <div class="card" id="metricsAdCodes"></div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Catálogo de productos -->
+      <section class="view" id="view-products">
+        <div class="products-scroll">
+          <div class="products-inner">
+            <div class="products-bar">
+              <p class="help">
+                Lo que cargues acá es lo único que el bot da por cierto: usa estos
+                nombres y precios en vez de inventarlos.
+              </p>
+              <button class="btn btn-primary" id="newProduct">Nuevo producto</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+          </div>
+        </div>
+
+        <div class="drawer" id="productDrawer" hidden>
+          <div class="drawer-panel card">
+            <header class="drawer-head">
+              <h2 class="drawer-title" id="productFormTitle">Nuevo producto</h2>
+              <button class="btn" id="closeProduct" aria-label="Cerrar">✕</button>
+            </header>
+
+            <div class="drawer-body">
+              <div class="field">
+                <label for="p_name">Nombre</label>
+                <input type="text" id="p_name" placeholder="Reloj deportivo negro">
+              </div>
+
+              <div class="field field-row">
+                <div>
+                  <label for="p_price">Precio</label>
+                  <input type="number" id="p_price" min="0" step="0.01" placeholder="25.00">
+                </div>
+                <div>
+                  <label for="p_currency">Moneda</label>
+                  <input type="text" id="p_currency" placeholder="Bs">
+                </div>
+                <div>
+                  <label for="p_active">Estado</label>
+                  <select id="p_active">
+                    <option value="1">Activo</option>
+                    <option value="0">Pausado</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="p_sku">SKU (opcional)</label>
+                <input type="text" id="p_sku" placeholder="SKU-001">
+              </div>
+
+              <div class="field">
+                <label for="p_description">Descripción</label>
+                <div class="help">Colores, tallas, materiales, tiempo de envío.</div>
+                <textarea id="p_description" rows="3"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="p_prompt">Instrucciones solo para este producto</label>
+                <div class="help">
+                  Se suman a las instrucciones generales cuando el producto está activo.
+                  Ej: "no ofrecer descuento", "siempre preguntar la talla primero".
+                </div>
+                <textarea id="p_prompt" rows="4"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="p_triggers">Palabras que activan el flujo</label>
+                <div class="help">
+                  Separadas por coma. Si el cliente escribe alguna de estas <strong>en su
+                  primer mensaje sobre este producto</strong>, el bot liga la conversación a
+                  él y, si cargaste un mensaje inicial abajo, lo manda tal cual en vez de
+                  pensar una respuesta. Ej: <code>aceite, aceite capilar, el del anuncio</code>
+                </div>
+                <input type="text" id="p_triggers" placeholder="aceite, aceite capilar, crecimiento">
+              </div>
+
+              <div class="field">
+                <label for="p_intro">Mensaje inicial</label>
+                <div class="help">
+                  Lo que le llega al cliente apenas pregunta por este producto (con las
+                  palabras de arriba). Sale <strong>tal cual lo escribiste</strong>, sin pasar
+                  por el modelo. Si lo dejás vacío, el bot solo liga la conversación al
+                  producto y responde normal.
+                </div>
+                <textarea id="p_intro" rows="3" placeholder="¡Hola! Sí, tenemos el producto disponible. Cuesta 25 USD. ¿Para qué ciudad lo necesitás?"></textarea>
+              </div>
+
+              <div class="field">
+                <label>Fotos del mensaje inicial (opcional)</label>
+                <div class="help">
+                  Se eligen de la biblioteca de imágenes. Tocá las que quieras (podés
+                  elegir más de una): se mandan una detrás de otra, y el texto de
+                  arriba va con la última.
+                </div>
+                <div class="field-imgpicker" data-picker="introImage">
+                  <input type="text" class="field-imgpicker-search" placeholder="Buscar imagen por nombre...">
+                  <div class="field-imgpicker-grid"></div>
+                  <div class="field-imgpicker-empty help" hidden>No hay imágenes con ese nombre. Subilas desde la pestaña Imágenes.</div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="p_upsell">Oferta para sumar al pedido</label>
+                <div class="help">
+                  El «por $5 más te llevás el segundo». El bot la ofrece una sola vez y
+                  justo cuando el cliente ya dijo que sí, antes de pedirle los datos.
+                </div>
+                <textarea id="p_upsell" rows="2" placeholder="Por $5 más te llevás el segundo, y el envío sigue siendo gratis."></textarea>
+              </div>
+
+              <div class="field field-master">
+                <label class="switch">
+                  <input type="checkbox" id="p_remarketingEnabled" checked>
+                  <span>Remarketing automático para este producto</span>
+                </label>
+                <div class="help">
+                  Si una conversación queda vinculada a este producto y se cuelga sin
+                  novedad en una etapa que todavía no es venta (ni vendido, ni en
+                  camino, ni retirado), se manda el mensaje de 2 horas y, si sigue sin
+                  novedad, el de 5 horas. Dejá el texto vacío para no mandar ese paso.
+                  Solo se manda dentro del horario permitido (Configuración).
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="p_remarketing2h">Remarketing — a las 2 horas</label>
+                <textarea id="p_remarketing2h" rows="2" placeholder="¿Seguís interesado? Te lo puedo apartar cuando quieras 😊"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="p_remarketing5h">Remarketing — a las 5 horas</label>
+                <textarea id="p_remarketing5h" rows="2" placeholder="Última consulta antes de que se me acabe el stock de hoy: ¿te lo aparto?"></textarea>
+              </div>
+            </div>
+
+            <footer class="drawer-foot">
+              <button class="btn btn-danger" id="deleteProduct" hidden>Eliminar</button>
+              <span class="header-spacer"></span>
+              <span class="save-msg" id="productMsg"></span>
+              <button class="btn btn-primary" id="saveProduct">Guardar</button>
+            </footer>
+          </div>
+        </div>
+      </section>
+
+      <!-- Biblioteca de imágenes -->
+      <section class="view" id="view-library">
+        <div class="autos-scroll">
+          <div class="autos-inner">
+            <div class="lib-bar">
+              <p class="help">
+                Las fotos que subas acá se pueden usar como mensaje inicial de un
+                producto. <strong>El nombre importa</strong>: es la referencia con la que
+                las vas a reconocer en la grilla. Podés subir varias a la vez y
+                organizarlas en carpetas.
+              </p>
+              <label class="btn btn-primary lib-upload">
+                <span id="libUploadLabel">Subir imágenes</span>
+                <input type="file" id="libFile" accept="image/jpeg,image/png,image/webp" multiple hidden>
+              </label>
+            </div>
+
+            <div class="lib-toolbar">
+              <input type="text" id="libSearch" class="lib-search" placeholder="Buscar por nombre...">
+              <div class="lib-folders" id="libFolders"></div>
+            </div>
+
+            <div class="lib-grid" id="libGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Envíos masivos con plantillas aprobadas -->
+      <section class="view" id="view-broadcast">
+        <div class="autos-scroll">
+          <div class="autos-inner">
+
+            <div class="card cfg" style="padding: var(--s5);">
+              <div class="field">
+                <label for="bc_template">Plantilla</label>
+                <div class="help">
+                  Tiene que ser una plantilla ya aprobada por Meta. Si no aparecen en la
+                  lista, escribí el nombre exacto a mano.
+                </div>
+                <input type="text" list="bc_templateList" id="bc_template" placeholder="Nombre de la plantilla">
+                <datalist id="bc_templateList"></datalist>
+              </div>
+
+              <div class="field field-row">
+                <div>
+                  <label for="bc_lang">Idioma</label>
+                  <input type="text" id="bc_lang" value="es">
+                </div>
+                <div>
+                  <label for="bc_scope">Destinatarios</label>
+                  <select id="bc_scope">
+                    <option value="all">Todas las conversaciones</option>
+                    <option value="stage">Filtrar por etapa</option>
+                  </select>
+                </div>
+                <div id="bc_stageWrap" hidden>
+                  <label for="bc_stage">Etapa</label>
+                  <select id="bc_stage"></select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="bc_params">Variables de la plantilla</label>
+                <div class="help">Separadas por coma, en el orden en que aparecen en la plantilla ({{1}}, {{2}}...).</div>
+                <input type="text" id="bc_params" placeholder="Juan, 20% OFF">
+              </div>
+
+              <div class="settings-actions">
+                <button class="btn btn-primary" id="bc_send">Mandar envío masivo</button>
+                <span class="save-msg" id="bc_msg"></span>
+              </div>
+            </div>
+
+            <h2 class="section-title">Historial</h2>
+            <div class="card run-table" id="bc_history"></div>
+
+            <h2 class="section-title">Envío masivo personalizado (nombre, apellido, monto por cliente)</h2>
+            <div class="card cfg" style="padding: var(--s5);">
+              <div class="field">
+                <label for="pb_template">Plantilla</label>
+                <div class="help">
+                  Usá esto cuando cada cliente tiene que recibir SUS propios datos (por
+                  ejemplo nombre, apellido y monto), a diferencia del envío masivo de
+                  arriba que manda las mismas variables a todo el mundo.
+                </div>
+                <input type="text" list="bc_templateList" id="pb_template" placeholder="Nombre de la plantilla">
+              </div>
+
+              <div class="field field-row">
+                <div>
+                  <label for="pb_lang">Idioma</label>
+                  <input type="text" id="pb_lang" value="es">
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Orden de las variables de la plantilla</label>
+                <div class="help">
+                  Elegí qué dato va en {{1}}, {{2}} y {{3}} tal cual quedó aprobada la
+                  plantilla en Meta. Si tiene menos de 3 variables, dejá las que sobran en
+                  "No aplica".
+                </div>
+                <div class="field-row">
+                  <select id="pb_var1"><option value="">{{1}} = ...</option></select>
+                  <select id="pb_var2"><option value="">{{2}} = ...</option></select>
+                  <select id="pb_var3"><option value="">{{3}} = ...</option></select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="pb_file">Excel con la lista de clientes</label>
+                <div class="help">
+                  Una fila por cliente, con columnas "Telefono", "Nombre", "Apellido" y
+                  "Monto" (podés usar otros nombres parecidos, se detectan solos). El
+                  teléfono tiene que incluir el código de país (ej. 584121234567).
+                </div>
+                <input type="file" id="pb_file" accept=".xlsx,.xls">
+              </div>
+
+              <div class="settings-actions">
+                <button class="btn" id="pb_analyze">Analizar Excel</button>
+                <span class="save-msg" id="pb_msg"></span>
+              </div>
+
+              <div id="pb_results"></div>
+
+              <div class="settings-actions" id="pb_confirmWrap" hidden>
+                <button class="btn btn-primary" id="pb_confirm">Mandar a todos</button>
+                <span class="save-msg" id="pb_confirmMsg"></span>
+              </div>
+            </div>
+
+            <h2 class="section-title">Guías por lote (Dropanas)</h2>
+            <div class="card cfg" style="padding: var(--s5);">
+              <div class="field">
+                <label for="dp_file">Excel de pedidos de Dropanas</label>
+                <div class="help">
+                  Subí el Excel que exportás desde Dropanas (el que ya trae la columna de
+                  guía generada). El bot cruza el nombre del cliente contra las
+                  conversaciones vendidas y te arma la lista abajo para revisar — no manda
+                  nada hasta que confirmes.
+                </div>
+                <input type="file" id="dp_file" accept=".xlsx,.xls">
+              </div>
+              <div class="field">
+                <label for="dp_photos">Fotos de las guías (opcional)</label>
+                <div class="help">
+                  Si tenés una foto por cliente, nombrá cada archivo con el nombre del
+                  cliente (por ejemplo "Ibrahin Ramirez.jpg") y subilas todas juntas acá —
+                  se cruzan solas con la fila que le corresponde. Nada más, se manda igual
+                  que si la hubieras cargado a mano en el chat.
+                </div>
+                <input type="file" id="dp_photos" accept="image/*" multiple>
+              </div>
+              <div class="settings-actions">
+                <button class="btn" id="dp_analyze">Analizar archivo</button>
+                <span class="save-msg" id="dp_msg"></span>
+              </div>
+              <div id="dp_results"></div>
+              <div class="settings-actions" id="dp_confirmWrap" hidden>
+                <button class="btn btn-primary" id="dp_confirm">Confirmar y mandar las marcadas</button>
+                <span class="save-msg" id="dp_confirmMsg"></span>
+              </div>
+            </div>
+
+            <h2 class="section-title">Seguimiento diario (Dropanas)</h2>
+            <div class="card cfg" style="padding: var(--s5);">
+              <div class="field">
+                <label for="sg_file">Excel diario de Dropanas</label>
+                <div class="help">
+                  El mismo Excel que exportás todos los días (con Guía, Cliente, Ciudad,
+                  Producto, Estado Pedido, Total Venta y Bodega Destino). El bot cruza cada
+                  fila con la conversación por nombre y arma la lista de abajo para que
+                  revises antes de tocar nada:<br>
+                  · <strong>En oficina</strong> → pasa la conversación a "Esperando retiro" y
+                  te arma el envío de "ya podés pasar a buscarlo" (con nombre, producto,
+                  guía y monto ya calculados de esa misma fila).<br>
+                  · <strong>En camino / En tránsito</strong> → pasa a "En camino", sin mandar nada.<br>
+                  · <strong>Entregado</strong> → pasa a "Entregado", sin mandar nada.<br>
+                  · Cualquier otro estado (Pagado, Cancelado, En novedad, etc.) → no se
+                  toca, solo se lista para que lo revises vos si querés.
+                </div>
+                <input type="file" id="sg_file" accept=".xlsx,.xls">
+              </div>
+              <div class="settings-actions">
+                <button class="btn" id="sg_analyze">Analizar Excel</button>
+                <span class="save-msg" id="sg_msg"></span>
+              </div>
+              <div id="sg_results"></div>
+              <div class="settings-actions" id="sg_confirmWrap" hidden>
+                <button class="btn btn-primary" id="sg_confirm">Confirmar y aplicar las marcadas</button>
+                <span class="save-msg" id="sg_confirmMsg"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Simulador: probar el bot sin mandar nada por WhatsApp -->
+      <section class="view" id="view-sim">
+        <div class="convo-layout" id="simLayout">
+          <aside class="convo-sidebar">
+            <div class="memory-card" id="simMemoryCard"></div>
+            <div class="field" style="padding: 0 var(--s4);">
+              <label for="sim_lat">Simular ubicación (lat, lng)</label>
+              <div class="field-row">
+                <input type="text" id="sim_lat" placeholder="10.4806">
+                <input type="text" id="sim_lng" placeholder="-66.9036">
+              </div>
+              <button class="btn" id="sim_sendLoc" type="button">Enviar ubicación</button>
+            </div>
+            <button class="btn" id="sim_reset" style="margin: var(--s4);">↻ Reiniciar simulación</button>
+          </aside>
+
+          <div class="chat">
+            <div class="chat-header">
+              <span class="avatar avatar-sm">SIM</span>
+              <div class="chat-ident">
+                <div class="chat-title">Cliente simulado</div>
+                <div class="chat-sub" id="simStageLabel">Etapa: nuevo</div>
+              </div>
+            </div>
+
+            <div class="chat-messages" id="simMessages">
+              <div class="empty-state">
+                <div class="icon">🧪</div>
+                <div class="title">Probá el bot acá</div>
+                <div class="desc">Nada de esto sale por WhatsApp de verdad: es la misma IA y el mismo catálogo, en un chat de prueba.</div>
+              </div>
+            </div>
+
+            <div class="chat-composer">
+              <input type="text" id="simInput" placeholder="Escribir como si fueras el cliente…">
+              <button class="btn btn-primary" id="simSend">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cupones / codigos de descuento -->
+      <section class="view" id="view-coupons">
+        <div class="autos-scroll">
+          <div class="autos-inner">
+
+            <div class="card cfg" style="padding: var(--s5);">
+              <p class="help">
+                Los cupones activos se los pasamos al bot para que los mencione o los
+                aplique cuando corresponda. El código sale siempre en mayúsculas.
+              </p>
+              <div class="field field-row">
+                <div>
+                  <label for="cp_code">Código</label>
+                  <input type="text" id="cp_code" placeholder="CHISPA10">
+                </div>
+                <div>
+                  <label for="cp_discount">Descuento (%)</label>
+                  <input type="number" id="cp_discount" min="0" max="100" step="1" placeholder="10">
+                </div>
+                <div>
+                  <label for="cp_active">Estado</label>
+                  <select id="cp_active">
+                    <option value="1">Activo</option>
+                    <option value="0">Pausado</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="cp_description">Descripción</label>
+                <div class="help">Cuándo aplica, condiciones, hasta cuándo dura.</div>
+                <textarea id="cp_description" rows="2" placeholder="10% off en la primera compra, válido todo agosto"></textarea>
+              </div>
+              <div class="settings-actions">
+                <button class="btn btn-primary" id="cp_save">Agregar cupón</button>
+                <span class="save-msg" id="cp_msg"></span>
+              </div>
+            </div>
+
+            <h2 class="section-title">Cupones cargados</h2>
+            <div class="card run-table" id="cp_list"></div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Configuración -->
+      <section class="view" id="view-config">
+        <div class="settings-scroll">
+          <div class="settings-inner">
+
+            <details class="card cfg" open>
+              <summary class="cfg-head">
+                <span class="cfg-title">General</span>
+                <span class="cfg-sub">Switch maestro y mensaje inicial</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field field-master">
+                  <label class="switch switch-lg">
+                    <input type="checkbox" id="cfg_botToggle">
+                    <span>Bot activo (switch maestro)</span>
+                  </label>
+                  <div class="help">
+                    Apaga las respuestas automáticas en todas las conversaciones, sin
+                    desconectar WhatsApp.
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="cfg_businessName">Nombre del negocio</label>
+                  <div class="help">Como se presenta el bot cuando habla del negocio.</div>
+                  <input type="text" id="cfg_businessName" placeholder="ChispudosMarket">
+                </div>
+
+                <div class="field">
+                  <label for="cfg_welcome">Mensaje inicial / de bienvenida</label>
+                  <div class="help">
+                    Lo que manda el bot apenas arranca una conversación nueva. Si lo dejás
+                    vacío, usa el saludo genérico por defecto.
+                  </div>
+                  <textarea id="cfg_welcome" rows="4" placeholder="¡Hola! 👋 Bienvenido a ChispudosMarket, ¿en qué te puedo ayudar hoy?"></textarea>
+                </div>
+
+                <div class="field">
+                  <label>Fotos del saludo inicial (opcional)</label>
+                  <div class="help">
+                    Se eligen de la biblioteca de imágenes. Tocá las que quieras. Si
+                    cargás alguna, el saludo de arriba sale junto con esas fotos en
+                    vez de solo texto.
+                  </div>
+                  <div class="field-imgpicker" data-picker="welcomeImage">
+                    <input type="text" class="field-imgpicker-search" placeholder="Buscar imagen por nombre...">
+                    <div class="field-imgpicker-grid"></div>
+                    <div class="field-imgpicker-empty help" hidden>No hay imágenes con ese nombre. Subilas desde la pestaña Imágenes.</div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Base de conocimiento</span>
+                <span class="cfg-sub">Envíos, plazos, promos del momento</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="cfg-note">
+                  Esto va tal cual al modelo como verdad, así que solo poné cosas que sean
+                  ciertas hoy. Los productos y precios van en la pestaña Productos, no acá.
+                </div>
+                <div class="field">
+                  <label for="cfg_knowledge">Lo que el bot da por cierto</label>
+                  <textarea id="cfg_knowledge" rows="10" placeholder="Envío: gratis arriba de $50.
+Entrega: 24 a 48 h.
+Pago: contra entrega o por adelantado.
+Cambios: hasta 7 días con el producto sin abrir."></textarea>
+                </div>
+
+                <div class="field">
+                  <label for="cfg_dataRequestTemplate">Texto para pedir los datos del pedido (nombre/cédula/teléfono)</label>
+                  <div class="help">
+                    El bot manda esto TAL CUAL, en un único mensaje, cuando ya cerró el
+                    producto/cantidad/agencia y necesita nombre, cédula y teléfono para
+                    procesar el pedido (retiro en agencia). Dejalo vacío para usar el texto
+                    por defecto. <strong>Importante:</strong> si cambiás las palabras
+                    "Nombre", "Cédula" o "Teléfono" por otras, avisale a quien programó el
+                    bot: el sistema que evita pedir estos datos dos veces en la misma charla
+                    busca esas palabras puntuales.
+                  </div>
+                  <textarea id="cfg_dataRequestTemplate" rows="6" placeholder="📦 Para procesar tu pedido envíanos:
+👤 Nombre y apellido:
+🆔 Cédula:
+📞 Teléfono:
+🚚 Enviaremos tu pedido GRATIS por Tealca a la oficina más cercana"></textarea>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Respuestas</span>
+                <span class="cfg-sub">Modelo, temperatura e historial</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field">
+                  <label for="cfg_model">Modelo</label>
+                  <div class="help">Modelo de OpenAI para las respuestas. Vacío usa el que esté configurado en el servidor.</div>
+                  <input type="text" id="cfg_model" placeholder="gpt-4o-mini">
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="cfg_temperature">Temperatura <span class="range-value" id="cfg_temperature_val"></span></label>
+                    <div class="help">Más alto = más variado.</div>
+                    <input type="range" id="cfg_temperature" min="0" max="2" step="0.1">
+                  </div>
+                  <div class="field">
+                    <label for="cfg_historyN">Historial que ve el bot <span class="range-value" id="cfg_historyN_val"></span></label>
+                    <div class="help">Cuántos mensajes previos entran en cada respuesta.</div>
+                    <input type="range" id="cfg_historyN" min="1" max="50" step="1">
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Respuestas en varios mensajes</span>
+                <span class="cfg-sub">Espera antes de contestar, largo y nota de voz</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field">
+                  <label for="cfg_replyDelay">Esperar antes de responder <span class="range-value" id="cfg_replyDelay_val"></span></label>
+                  <div class="help">
+                    El cliente manda «hola» / «cuánto» / «el aceite» en varios mensajes seguidos.
+                    El bot espera este rato de silencio y contesta <strong>una sola vez a todo junto</strong>.
+                    Cada mensaje nuevo reinicia la espera.
+                  </div>
+                  <input type="range" id="cfg_replyDelay" min="0" max="30" step="1">
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="cfg_maxWords">Objetivo de palabras por mensaje <span class="range-value" id="cfg_maxWords_val"></span></label>
+                    <div class="help">Para algo simple: saludar, confirmar un dato, un sí o un no. No es un tope duro.</div>
+                    <input type="range" id="cfg_maxWords" min="10" max="80" step="5">
+                  </div>
+                  <div class="field">
+                    <label for="cfg_maxWordsHardCap">Tope al explicar algo <span class="range-value" id="cfg_maxWordsHardCap_val"></span></label>
+                    <div class="help">Producto, datos del formulario o una agencia: recién si se pasa de esto se corta.</div>
+                    <input type="range" id="cfg_maxWordsHardCap" min="40" max="200" step="10">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="cfg_maxParts">Máximo de mensajes por respuesta <span class="range-value" id="cfg_maxParts_val"></span></label>
+                  <div class="help">Lo que sobre se pega al último: nunca se descarta texto.</div>
+                  <input type="range" id="cfg_maxParts" min="1" max="8" step="1">
+                </div>
+
+                <div class="field field-master">
+                  <label class="switch">
+                    <input type="checkbox" id="cfg_splitEnabled">
+                    <span>Partir respuestas largas en varios mensajes</span>
+                  </label>
+                  <div class="help">
+                    Si está apagado, el bot siempre contesta en un solo mensaje de WhatsApp,
+                    sin importar cuántas ideas tenga la respuesta.
+                  </div>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="cfg_splitMinWords">Mínimo de palabras para partir <span class="range-value" id="cfg_splitMinWords_val"></span></label>
+                    <div class="help">Un fragmento más corto que esto se pega al de al lado, para no mandar un mensaje de una sola palabra.</div>
+                    <input type="range" id="cfg_splitMinWords" min="1" max="10" step="1">
+                  </div>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="cfg_splitGapMin">Espera mínima entre mensajes <span class="range-value" id="cfg_splitGapMin_val"></span></label>
+                    <div class="help">Cuando la respuesta se manda partida, esto es lo mínimo que espera entre un mensaje y el siguiente.</div>
+                    <input type="range" id="cfg_splitGapMin" min="1" max="15" step="0.5">
+                  </div>
+                  <div class="field">
+                    <label for="cfg_splitGapMax">Espera máxima entre mensajes <span class="range-value" id="cfg_splitGapMax_val"></span></label>
+                    <div class="help">Y esto lo máximo. El bot elige un tiempo al azar entre los dos, como si estuviera escribiendo.</div>
+                    <input type="range" id="cfg_splitGapMax" min="1" max="20" step="0.5">
+                  </div>
+                </div>
+
+                <div class="field field-master">
+                  <label class="switch">
+                    <input type="checkbox" id="cfg_audioEnabled">
+                    <span>Responder también con una nota de voz</span>
+                  </label>
+                  <div class="help">
+                    Además del texto, el bot manda un audio leyendo la misma respuesta.
+                    Necesita que el servidor tenga una URL pública (ya la tiene en Render).
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Remarketing automático</span>
+                <span class="cfg-sub">Recordatorios a las 2h y 5h para pedidos colgados</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field field-master">
+                  <label class="switch">
+                    <input type="checkbox" id="cfg_remarketingEnabled">
+                    <span>Mandar recordatorios automáticos</span>
+                  </label>
+                  <div class="help">
+                    El texto de cada mensaje (2h y 5h) se carga por producto, en
+                    Catálogo → el producto → "Remarketing automático". Este switch
+                    frena TODOS los envíos automáticos de golpe sin perder ese texto.
+                  </div>
+                </div>
+                <div class="field field-row">
+                  <div>
+                    <label for="cfg_remarketingHourStart">Hora desde (0-23)</label>
+                    <input type="number" id="cfg_remarketingHourStart" min="0" max="23" step="1">
+                  </div>
+                  <div>
+                    <label for="cfg_remarketingHourEnd">Hora hasta (0-23)</label>
+                    <input type="number" id="cfg_remarketingHourEnd" min="0" max="23" step="1">
+                  </div>
+                </div>
+                <div class="help">
+                  Fuera de este rango (hora de Venezuela) los recordatorios se
+                  posponen: no se pierden, se mandan apenas vuelve a abrir el horario.
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Guía de envío automática</span>
+                <span class="cfg-sub">Avisale al cliente solo apenas cargás el número de guía</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="cfg-note">
+                  Cuando cargás el número de guía de un pedido (en el chat, arriba de los
+                  mensajes), el bot le avisa al cliente sin que tengas que escribirle vos:
+                  si todavía te puede escribir texto libre (menos de 24h desde su último
+                  mensaje) usa el texto de abajo; si ya pasaron más de 24h, usa la
+                  plantilla aprobada que elijas acá abajo (obligatoria para ese caso, es
+                  la única forma que WhatsApp permite escribirle fuera de esas 24h).
+                </div>
+                <div class="field">
+                  <label for="cfg_shippingTemplateName">Plantilla para cuando la ventana ya está cerrada</label>
+                  <div class="help">Nombre EXACTO tal cual quedó aprobada en Meta (Administrador de WhatsApp → Plantillas de mensajes).</div>
+                  <input type="text" list="cfg_shippingTemplateList" id="cfg_shippingTemplateName" placeholder="Ej: guia_de_envio">
+                  <datalist id="cfg_shippingTemplateList"></datalist>
+                </div>
+                <div class="field">
+                  <label for="cfg_shippingTemplateLanguage">Idioma con el que quedó aprobada</label>
+                  <input type="text" id="cfg_shippingTemplateLanguage" placeholder="es">
+                </div>
+                <div class="field">
+                  <label for="cfg_shippingFreeText">Texto para cuando la ventana todavía está abierta</label>
+                  <div class="help">
+                    Admite <code>{{nombre}}</code>, <code>{{producto}}</code> y
+                    <code>{{guia}}</code>: se reemplazan solos por los datos de cada pedido.
+                    Dejalo vacío para usar el texto por defecto.
+                  </div>
+                  <textarea id="cfg_shippingFreeText" rows="3" placeholder="Hola {{nombre}}! Tu pedido de {{producto}} ya está en camino. Número de guía: {{guia}}."></textarea>
+                </div>
+                <div class="field">
+                  <label for="cfg_pickupTemplateName">Plantilla de "ya podés retirarlo" (seguimiento diario)</label>
+                  <div class="help">
+                    La usa el "Seguimiento diario (Dropanas)" en Envíos masivos cuando el
+                    Excel dice que un pedido ya está en oficina. Nombre EXACTO aprobado en
+                    Meta. Vacío = usa "pedido_ha_llegado_a_tealca".
+                  </div>
+                  <input type="text" list="cfg_shippingTemplateList" id="cfg_pickupTemplateName" placeholder="pedido_ha_llegado_a_tealca">
+                </div>
+                <div class="field">
+                  <label for="cfg_pickupTemplateLanguage">Idioma con el que quedó aprobada esa plantilla</label>
+                  <input type="text" id="cfg_pickupTemplateLanguage" placeholder="es">
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Cobertura de agencias</span>
+                <span class="cfg-sub">Subí un Excel para actualizar el listado</span>
+              </summary>
+
+              <div class="cfg-body">
+                <div class="cfg-note" id="agencies_meta">Cargando…</div>
+                <div class="field">
+                  <label for="agencies_file">Excel de agencias</label>
+                  <div class="help">
+                    Columnas esperadas: <strong>ESTADO</strong>, <strong>AGENCIA</strong>, <strong>DIRECCIÓN</strong> (como la planilla de Tealca).
+                    Al subirlo se reemplaza el listado completo que usa el bot para ubicar la agencia más cercana.
+                  </div>
+                  <input type="file" id="agencies_file" accept=".xlsx,.xls">
+                </div>
+                <div class="settings-actions">
+                  <button class="btn btn-primary" id="agencies_upload">Importar Excel</button>
+                  <span class="save-msg" id="agencies_msg"></span>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg" id="cfg_notifCard">
+              <summary class="cfg-head">
+                <span class="cfg-title">Notificaciones y app en el celular</span>
+                <span class="cfg-sub">Aviso al instante cuando hay una venta nueva</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field">
+                  <div class="help">
+                    Activá esto para que te llegue una notificación al celular (o la PC) apenas
+                    una conversación pasa a la etapa "Vendido", como las notificaciones de venta
+                    de Shopify. Funciona aunque tengas el panel cerrado, siempre que lo hayas
+                    abierto al menos una vez en ese dispositivo y lo hayas dejado instalado o
+                    con el navegador con permiso.
+                  </div>
+                </div>
+                <div class="settings-actions">
+                  <button class="btn btn-primary" id="notif_enable">Activar notificaciones en este dispositivo</button>
+                  <button class="btn" id="notif_test" hidden>Mandar notificación de prueba</button>
+                  <span class="save-msg" id="notif_msg"></span>
+                </div>
+                <div class="field" style="margin-top:var(--s3)">
+                  <div class="help">
+                    <strong>Tip:</strong> para tenerlo como una app en tu celular (sin escribir la
+                    URL cada vez), abrí este panel desde el navegador del celular y elegí
+                    "Agregar a pantalla de inicio" (Chrome/Android) o "Compartir → Agregar a
+                    inicio" (Safari/iPhone). Queda con ícono propio y se abre a pantalla completa.
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="card cfg">
+              <summary class="cfg-head">
+                <span class="cfg-title">Copia de seguridad</span>
+                <span class="cfg-sub">Descargar un respaldo de conversaciones, catálogo y cupones</span>
+              </summary>
+              <div class="cfg-body">
+                <div class="field">
+                  <div class="help">
+                    Bajá un archivo con todas las conversaciones, el catálogo, los cupones y la
+                    configuración actual. Sirve como respaldo por si el servicio se reinicia y se
+                    pierden los datos que no están guardados en el código (esto puede pasar en
+                    planes sin disco persistente). Conviene descargarlo de vez en cuando, sobre
+                    todo antes de hacer cambios grandes.
+                  </div>
+                </div>
+                <div class="settings-actions">
+                  <button class="btn btn-primary" id="backup_download">Descargar copia de seguridad</button>
+                  <button class="btn" id="csv_download">Descargar ventas en Excel/CSV</button>
+                  <span class="save-msg" id="backup_msg"></span>
+                </div>
+              </div>
+            </details>
+
+            <div class="settings-actions">
+              <button class="btn btn-primary" id="cfg_save">Guardar configuración</button>
+              <span class="save-msg" id="cfg_msg"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="/panel/app.js"></script>
+</body>
+</html>
